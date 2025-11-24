@@ -88,7 +88,7 @@ export default function MaintenancePage() {
           </div>
 
           {/* Logo Image Between Date and Contact */}
-          <div className="mb-2 px-4 w-full flex justify-center">
+          <div className="mb-2 px-4 w-full flex flex-col items-center">
             <img 
               src="/logo.jpeg" 
               alt="KINA EVENTS Logo" 
@@ -98,6 +98,9 @@ export default function MaintenancePage() {
                 objectFit: 'contain'
               }}
             />
+            <p className="text-white font-poiret text-lg sm:text-xl md:text-2xl lg:text-3xl mt-2 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
+              KINA EVENTS
+            </p>
           </div>
         </div>
       </div>
