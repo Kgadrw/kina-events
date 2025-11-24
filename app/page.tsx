@@ -37,11 +37,19 @@ export default function MaintenancePage() {
 
   return (
     <div className="min-h-screen flex flex-col relative overflow-hidden bg-black">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(/news.webp)'
+        }}
+      />
+      
       {/* Black Overlay */}
-      <div className="absolute inset-0 bg-black/85 z-0"></div>
+      <div className="absolute inset-0 bg-black/85 z-[1]"></div>
       
       {/* Noise Effect */}
-      <div className="absolute inset-0 z-[1]">
+      <div className="absolute inset-0 z-[2]">
         <Noise
           patternSize={250}
           patternScaleX={1}
@@ -52,7 +60,7 @@ export default function MaintenancePage() {
       </div>
 
       {/* Scrolling Text */}
-      <div className="relative z-40 w-full h-12 bg-white flex items-center overflow-hidden">
+      <div className="relative z-40 w-full h-12 bg-yellow-400 flex items-center overflow-hidden">
         <div className="flex animate-scroll whitespace-nowrap font-poiret items-center">
           <span className="text-black font-bold text-lg md:text-xl px-8">
             Website is under maintenance • 
@@ -97,7 +105,7 @@ export default function MaintenancePage() {
             <img 
               src="/black.png" 
               alt="Logo" 
-              className="h-24 md:h-32 lg:h-40 w-auto mx-auto filter grayscale"
+              className="h-24 md:h-32 lg:h-40 w-auto mx-auto"
             />
           </div>
           
@@ -131,7 +139,7 @@ export default function MaintenancePage() {
                 className="h-6 w-6" 
                 fill="none" 
                 viewBox="0 0 24 24" 
-                stroke="currentColor"
+                stroke="#FFD700"
               >
                 <path 
                   strokeLinecap="round" 
@@ -151,7 +159,7 @@ export default function MaintenancePage() {
                 className="h-6 w-6" 
                 fill="none" 
                 viewBox="0 0 24 24" 
-                stroke="currentColor"
+                stroke="#FFD700"
               >
                 <path 
                   strokeLinecap="round" 
@@ -170,7 +178,7 @@ export default function MaintenancePage() {
       <div 
         className="absolute bottom-0 left-0 w-full h-8 z-30"
         style={{
-          backgroundImage: 'repeating-linear-gradient(45deg, #fff 0, #fff 20px, #000 20px, #000 40px)'
+          backgroundImage: 'repeating-linear-gradient(45deg, #FFD700 0, #FFD700 20px, #000 20px, #000 40px)'
         }}
       />
     </div>
