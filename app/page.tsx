@@ -92,6 +92,15 @@ export default function MaintenancePage() {
       {/* Main Content */}
       <div className="flex-1 flex items-center justify-center relative z-10 p-8 md:p-4">
         <div className="text-center text-white w-full font-poiret flex flex-col items-center justify-center">
+          {/* Logo Image Above Time */}
+          <div className="mb-6">
+            <img 
+              src="/black.png" 
+              alt="Logo" 
+              className="h-24 md:h-32 lg:h-40 w-auto mx-auto filter grayscale"
+            />
+          </div>
+          
           {/* Time Display */}
           <div className="mb-6">
             <div className="text-7xl md:text-8xl lg:text-9xl font-normal drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
