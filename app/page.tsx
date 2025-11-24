@@ -77,7 +77,7 @@ export default function MaintenancePage() {
           
           {/* Time Display */}
           <div className="mb-6">
-            <div className="text-7xl md:text-8xl lg:text-9xl font-normal drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+            <div className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-normal drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
               {formatTime(time)}
             </div>
           </div>
@@ -155,7 +155,7 @@ export default function MaintenancePage() {
 
       {/* Bottom Construction Border */}
       <div 
-        className="absolute bottom-0 left-0 w-full h-8 z-30"
+        className="absolute bottom-0 left-0 w-full h-8 z-30 hidden md:block"
         style={{
           backgroundImage: 'repeating-linear-gradient(45deg, #fff 0, #fff 20px, #000 20px, #000 40px)'
         }}
