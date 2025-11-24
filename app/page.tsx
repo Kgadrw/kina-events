@@ -39,9 +39,9 @@ export default function MaintenancePage() {
     <div className="min-h-screen flex flex-col relative overflow-hidden bg-black">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-no-repeat bg-mobile-crop"
+        className="absolute inset-0 z-0 bg-cover bg-no-repeat bg-mobile-crop filter grayscale"
         style={{
-          backgroundImage: 'url(/news.webp)'
+          backgroundImage: 'url(/news.jpg)'
         }}
       />
       
@@ -59,44 +59,6 @@ export default function MaintenancePage() {
         />
       </div>
 
-      {/* Scrolling Text */}
-      <div className="relative z-40 w-full h-12 bg-yellow-400 flex items-center overflow-hidden">
-        <div className="flex animate-scroll whitespace-nowrap font-poiret items-center">
-          <span className="text-black font-bold text-lg md:text-xl px-8">
-            Website is under maintenance • 
-          </span>
-          <img src="/logo.png" alt="Logo" className="h-8 w-auto mx-4" />
-          <span className="text-black font-bold text-lg md:text-xl px-8">
-            Website is under maintenance • 
-          </span>
-          <img src="/logo.png" alt="Logo" className="h-8 w-auto mx-4" />
-          <span className="text-black font-bold text-lg md:text-xl px-8">
-            Website is under maintenance • 
-          </span>
-          <img src="/logo.png" alt="Logo" className="h-8 w-auto mx-4" />
-          <span className="text-black font-bold text-lg md:text-xl px-8">
-            Website is under maintenance • 
-          </span>
-          <img src="/logo.png" alt="Logo" className="h-8 w-auto mx-4" />
-          <span className="text-black font-bold text-lg md:text-xl px-8">
-            Website is under maintenance • 
-          </span>
-          <img src="/logo.png" alt="Logo" className="h-8 w-auto mx-4" />
-          <span className="text-black font-bold text-lg md:text-xl px-8">
-            Website is under maintenance • 
-          </span>
-          <img src="/logo.png" alt="Logo" className="h-8 w-auto mx-4" />
-          <span className="text-black font-bold text-lg md:text-xl px-8">
-            Website is under maintenance • 
-          </span>
-          <img src="/logo.png" alt="Logo" className="h-8 w-auto mx-4" />
-          <span className="text-black font-bold text-lg md:text-xl px-8">
-            Website is under maintenance • 
-          </span>
-          <img src="/logo.png" alt="Logo" className="h-8 w-auto mx-4" />
-        </div>
-      </div>
-
       {/* Main Content */}
       <div className="flex-1 flex items-center justify-center relative z-10 p-8 md:p-4">
         <div className="text-center text-white w-full font-poiret flex flex-col items-center justify-center">
@@ -105,7 +67,7 @@ export default function MaintenancePage() {
             <img 
               src="/black.png" 
               alt="Logo" 
-              className="h-20 sm:h-24 md:h-32 lg:h-40 w-auto max-w-full mx-auto animate-rotate-left-right"
+              className="h-20 sm:h-24 md:h-32 lg:h-40 w-auto max-w-full mx-auto animate-rotate-left-right filter grayscale"
               style={{
                 maxWidth: '90vw',
                 objectFit: 'contain'
@@ -121,8 +83,21 @@ export default function MaintenancePage() {
           </div>
           
           {/* Date Display */}
-          <div className="text-2xl md:text-3xl lg:text-4xl font-normal drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+          <div className="text-2xl md:text-3xl lg:text-4xl font-normal drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] mb-6">
             {formatDate(date)}
+          </div>
+
+          {/* Logo Image Between Date and Contact */}
+          <div className="mb-2 px-4 w-full flex justify-center">
+            <img 
+              src="/logo.jpeg" 
+              alt="KINA EVENTS Logo" 
+              className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto max-w-full mx-auto"
+              style={{
+                maxWidth: '90vw',
+                objectFit: 'contain'
+              }}
+            />
           </div>
         </div>
       </div>
@@ -143,7 +118,7 @@ export default function MaintenancePage() {
                 className="h-6 w-6" 
                 fill="none" 
                 viewBox="0 0 24 24" 
-                stroke="#FFD700"
+                stroke="#fff"
               >
                 <path 
                   strokeLinecap="round" 
@@ -163,7 +138,7 @@ export default function MaintenancePage() {
                 className="h-6 w-6" 
                 fill="none" 
                 viewBox="0 0 24 24" 
-                stroke="#FFD700"
+                stroke="#fff"
               >
                 <path 
                   strokeLinecap="round" 
@@ -182,7 +157,7 @@ export default function MaintenancePage() {
       <div 
         className="absolute bottom-0 left-0 w-full h-8 z-30"
         style={{
-          backgroundImage: 'repeating-linear-gradient(45deg, #FFD700 0, #FFD700 20px, #000 20px, #000 40px)'
+          backgroundImage: 'repeating-linear-gradient(45deg, #fff 0, #fff 20px, #000 20px, #000 40px)'
         }}
       />
     </div>
