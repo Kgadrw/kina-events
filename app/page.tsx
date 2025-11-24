@@ -52,42 +52,42 @@ export default function MaintenancePage() {
       </div>
 
       {/* Scrolling Text */}
-      <div className="relative z-40 w-full h-12 bg-yellow-400 flex items-center overflow-hidden">
-        <div className="flex animate-scroll whitespace-nowrap font-poiret">
+      <div className="relative z-40 w-full h-12 bg-white flex items-center overflow-hidden">
+        <div className="flex animate-scroll whitespace-nowrap font-poiret items-center">
           <span className="text-black font-bold text-lg md:text-xl px-8">
             Website is under maintenance • 
           </span>
+          <img src="/logo.png" alt="Logo" className="h-8 w-auto mx-4" />
           <span className="text-black font-bold text-lg md:text-xl px-8">
             Website is under maintenance • 
           </span>
+          <img src="/logo.png" alt="Logo" className="h-8 w-auto mx-4" />
           <span className="text-black font-bold text-lg md:text-xl px-8">
             Website is under maintenance • 
           </span>
+          <img src="/logo.png" alt="Logo" className="h-8 w-auto mx-4" />
           <span className="text-black font-bold text-lg md:text-xl px-8">
             Website is under maintenance • 
           </span>
+          <img src="/logo.png" alt="Logo" className="h-8 w-auto mx-4" />
           <span className="text-black font-bold text-lg md:text-xl px-8">
             Website is under maintenance • 
           </span>
+          <img src="/logo.png" alt="Logo" className="h-8 w-auto mx-4" />
           <span className="text-black font-bold text-lg md:text-xl px-8">
             Website is under maintenance • 
           </span>
+          <img src="/logo.png" alt="Logo" className="h-8 w-auto mx-4" />
           <span className="text-black font-bold text-lg md:text-xl px-8">
             Website is under maintenance • 
           </span>
+          <img src="/logo.png" alt="Logo" className="h-8 w-auto mx-4" />
           <span className="text-black font-bold text-lg md:text-xl px-8">
             Website is under maintenance • 
           </span>
+          <img src="/logo.png" alt="Logo" className="h-8 w-auto mx-4" />
         </div>
       </div>
-
-      {/* Top Construction Border */}
-      <div 
-        className="absolute top-12 left-0 w-full h-8 z-30"
-        style={{
-          backgroundImage: 'repeating-linear-gradient(45deg, #FFD700 0, #FFD700 20px, #000 20px, #000 40px)'
-        }}
-      />
 
       {/* Main Content */}
       <div className="flex-1 flex items-center justify-center relative z-10 p-8 md:p-4">
@@ -161,7 +161,7 @@ export default function MaintenancePage() {
       <div 
         className="absolute bottom-0 left-0 w-full h-8 z-30"
         style={{
-          backgroundImage: 'repeating-linear-gradient(45deg, #FFD700 0, #FFD700 20px, #000 20px, #000 40px)'
+          backgroundImage: 'repeating-linear-gradient(45deg, #fff 0, #fff 20px, #000 20px, #000 40px)'
         }}
       />
     </div>
