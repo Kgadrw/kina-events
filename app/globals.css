@@ -77,5 +77,29 @@
   .animate-scroll {
     animation: scroll 20s linear infinite;
   }
+
+  .bg-mobile-crop {
+    background-position: center 40%;
+  }
+
+  @media (min-width: 768px) {
+    .bg-mobile-crop {
+      background-position: center;
+    }
+  }
+
+  @keyframes rotate-left-right {
+    0%, 100% {
+      transform: perspective(1000px) rotateY(-15deg);
+    }
+    50% {
+      transform: perspective(1000px) rotateY(15deg);
+    }
+  }
+
+  .animate-rotate-left-right {
+    animation: rotate-left-right 3s ease-in-out infinite;
+    transform-style: preserve-3d;
+  }
 }
 

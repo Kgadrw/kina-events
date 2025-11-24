@@ -39,7 +39,7 @@ export default function MaintenancePage() {
     <div className="min-h-screen flex flex-col relative overflow-hidden bg-black">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 z-0 bg-cover bg-no-repeat bg-mobile-crop"
         style={{
           backgroundImage: 'url(/news.webp)'
         }}
@@ -101,11 +101,15 @@ export default function MaintenancePage() {
       <div className="flex-1 flex items-center justify-center relative z-10 p-8 md:p-4">
         <div className="text-center text-white w-full font-poiret flex flex-col items-center justify-center">
           {/* Logo Image Above Time */}
-          <div className="mb-6">
+          <div className="mb-6 px-4 w-full flex justify-center">
             <img 
               src="/black.png" 
               alt="Logo" 
-              className="h-24 md:h-32 lg:h-40 w-auto mx-auto"
+              className="h-20 sm:h-24 md:h-32 lg:h-40 w-auto max-w-full mx-auto animate-rotate-left-right"
+              style={{
+                maxWidth: '90vw',
+                objectFit: 'contain'
+              }}
             />
           </div>
           
