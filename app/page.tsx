@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Noise from '@/components/Noise'
 
 export default function MaintenancePage() {
   const [time, setTime] = useState(new Date())
@@ -38,6 +39,17 @@ export default function MaintenancePage() {
     <div className="min-h-screen flex flex-col relative overflow-hidden bg-black">
       {/* Black Overlay */}
       <div className="absolute inset-0 bg-black/85 z-0"></div>
+      
+      {/* Noise Effect */}
+      <div className="absolute inset-0 z-[1]">
+        <Noise
+          patternSize={250}
+          patternScaleX={1}
+          patternScaleY={1}
+          patternRefreshInterval={2}
+          patternAlpha={15}
+        />
+      </div>
 
       {/* Scrolling Text */}
       <div className="relative z-40 w-full h-12 bg-yellow-400 flex items-center overflow-hidden">
@@ -97,6 +109,9 @@ export default function MaintenancePage() {
       {/* Footer */}
       <footer className="relative z-20 w-full pb-12 pt-4">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <div className="text-center mb-4">
+            <h3 className="text-white font-poiret text-xl md:text-2xl font-normal">Contact us</h3>
+          </div>
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 text-white font-poiret">
             <a 
               href="tel:+250783880835" 
