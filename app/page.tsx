@@ -4,10 +4,16 @@ import { useState, useEffect } from 'react'
 import Noise from '@/components/Noise'
 
 export default function MaintenancePage() {
-  const [time, setTime] = useState(new Date())
-  const [date, setDate] = useState(new Date())
+  const [time, setTime] = useState<Date | null>(null)
+  const [date, setDate] = useState<Date | null>(null)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
+    const now = new Date()
+    setTime(now)
+    setDate(now)
+    
     const timer = setInterval(() => {
       const now = new Date()
       setTime(now)
@@ -36,7 +42,7 @@ export default function MaintenancePage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col relative overflow-hidden bg-black">
+    <div className="h-screen flex flex-col relative overflow-hidden bg-black">
       {/* Background Image */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-no-repeat bg-mobile-crop filter grayscale"
@@ -78,13 +84,13 @@ export default function MaintenancePage() {
           {/* Time Display */}
           <div className="mb-6">
             <div className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-normal drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
-              {formatTime(time)}
+              {mounted && time ? formatTime(time) : '--:--:-- --'}
             </div>
           </div>
           
           {/* Date Display */}
           <div className="text-2xl md:text-3xl lg:text-4xl font-normal drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] mb-6">
-            {formatDate(date)}
+            {mounted && date ? formatDate(date) : 'Loading...'}
           </div>
 
           {/* Logo Image Between Date and Contact */}
@@ -113,7 +119,7 @@ export default function MaintenancePage() {
           </div>
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 text-white font-poiret">
             <a 
-              href="tel:+250783880835" 
+              href="tel:+250788314703" 
               className="flex items-center gap-3 text-lg md:text-xl hover:opacity-80 transition-opacity drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
             >
               <svg 
@@ -130,7 +136,7 @@ export default function MaintenancePage() {
                   d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" 
                 />
               </svg>
-              +250 783 880 835
+              0788314703
             </a>
             <a 
               href="mailto:Kinaevents1@gmail.com" 
