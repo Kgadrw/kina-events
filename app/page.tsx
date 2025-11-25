@@ -66,10 +66,10 @@ export default function MaintenancePage() {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex items-center justify-center relative z-10 p-8 md:p-4">
+      <div className="flex-1 flex items-center justify-center relative z-10 p-8 md:p-2">
         <div className="text-center text-white w-full font-poiret flex flex-col items-center justify-center">
           {/* Logo Image Above Time */}
-          <div className="mb-6 px-4 w-full flex justify-center">
+          <div className="mb-6 md:mb-3 px-4 w-full flex justify-center">
             <img 
               src="/black.png" 
               alt="Logo" 
@@ -82,29 +82,29 @@ export default function MaintenancePage() {
           </div>
           
           {/* Time Display */}
-          <div className="mb-6">
+          <div className="mb-6 md:mb-3">
             <div className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-normal drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
               {mounted && time ? formatTime(time) : '--:--:-- --'}
             </div>
           </div>
           
           {/* Date Display */}
-          <div className="text-2xl md:text-3xl lg:text-4xl font-normal drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] mb-6">
+          <div className="text-2xl md:text-3xl lg:text-4xl font-normal drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] mb-6 md:mb-3">
             {mounted && date ? formatDate(date) : 'Loading...'}
           </div>
 
           {/* Logo Image Between Date and Contact */}
-          <div className="mb-2 px-4 w-full flex flex-col items-center">
+          <div className="mb-2 md:mb-1 px-4 w-full flex flex-col items-center">
             <img 
               src="/logo.jpeg" 
               alt="KINA EVENTS Logo" 
-              className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto max-w-full mx-auto"
+              className="h-12 sm:h-16 md:h-16 lg:h-20 w-auto max-w-full mx-auto"
               style={{
                 maxWidth: '90vw',
                 objectFit: 'contain'
               }}
             />
-            <p className="text-white font-poiret text-lg sm:text-xl md:text-2xl lg:text-3xl mt-2 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
+            <p className="text-white font-poiret text-lg sm:text-xl md:text-2xl lg:text-3xl mt-2 md:mt-1 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
               KINA EVENTS
             </p>
           </div>
@@ -112,12 +112,12 @@ export default function MaintenancePage() {
       </div>
 
       {/* Footer */}
-      <footer className="relative z-20 w-full pb-12 pt-4">
+      <footer className="relative z-20 w-full pb-12 md:pb-4 pt-4 md:pt-2">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <div className="text-center mb-4">
+          <div className="text-center mb-4 md:mb-2">
             <h3 className="text-white font-poiret text-xl md:text-2xl font-normal">Contact us</h3>
           </div>
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 text-white font-poiret">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-4 text-white font-poiret">
             <a 
               href="tel:+250788314703" 
               className="flex items-center gap-3 text-lg md:text-xl hover:opacity-80 transition-opacity drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
