@@ -1,12 +1,13 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Noise from '@/components/Noise'
 
 export default function MaintenancePage() {
   const [time, setTime] = useState<Date | null>(null)
   const [date, setDate] = useState<Date | null>(null)
   const [mounted, setMounted] = useState(false)
+
+  const videoSrc = 'https://www.youtube.com/embed/UHvo7ZQPUQU?autoplay=1&mute=1&loop=1&playlist=UHvo7ZQPUQU&start=6&controls=0&enablejsapi=1&rel=0&iv_load_policy=3'
 
   useEffect(() => {
     setMounted(true)
@@ -43,68 +44,63 @@ export default function MaintenancePage() {
 
   return (
     <div className="h-screen flex flex-col relative overflow-hidden bg-black">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-no-repeat bg-mobile-crop filter grayscale"
-        style={{
-          backgroundImage: 'url(/news.jpg)'
-        }}
-      />
+      {/* Background Video */}
+      <div className="absolute inset-0 z-0 w-full h-full overflow-hidden">
+        <iframe
+          width="100%"
+          height="100%"
+          src={videoSrc}
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[177.78vh] h-[56.25vw] min-w-full min-h-full"
+          style={{
+            pointerEvents: 'none',
+            transform: 'translate(-50%, -50%) scale(2.5)',
+            objectFit: 'cover'
+          }}
+        />
+      </div>
       
       {/* Black Overlay */}
       <div className="absolute inset-0 bg-black/85 z-[1]"></div>
-      
-      {/* Noise Effect */}
-      <div className="absolute inset-0 z-[2]">
-        <Noise
-          patternSize={250}
-          patternScaleX={1}
-          patternScaleY={1}
-          patternRefreshInterval={2}
-          patternAlpha={15}
-        />
-      </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex items-center justify-center relative z-10 p-8 md:p-2">
-        <div className="text-center text-white w-full font-poiret flex flex-col items-center justify-center">
-          {/* Logo Image Above Time */}
-          <div className="mb-6 md:mb-3 px-4 w-full flex justify-center">
-            <img 
-              src="/black.png" 
-              alt="Logo" 
-              className="h-20 sm:h-24 md:h-32 lg:h-40 w-auto max-w-full mx-auto animate-rotate-left-right filter grayscale"
-              style={{
-                maxWidth: '90vw',
-                objectFit: 'contain'
-              }}
-            />
+      <div className="flex-1 flex items-center justify-center relative z-10 p-8 md:p-2 min-h-0 overflow-y-auto">
+        <div className="text-center text-white w-full font-poiret flex flex-col items-center justify-center py-2">
+          {/* Website Coming Soon Text */}
+          <div className="mb-4 md:mb-2 lg:mb-3 px-4 w-full flex justify-center">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-poiret font-bold text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+              WEBSITE COMING SOON
+            </h1>
           </div>
           
           {/* Time Display */}
-          <div className="mb-6 md:mb-3">
-            <div className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-normal drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+          <div className="mb-4 md:mb-2 lg:mb-3">
+            <div className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl font-normal drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
               {mounted && time ? formatTime(time) : '--:--:-- --'}
             </div>
           </div>
           
           {/* Date Display */}
-          <div className="text-2xl md:text-3xl lg:text-4xl font-normal drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] mb-6 md:mb-3">
+          <div className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-normal drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] mb-4 md:mb-2 lg:mb-3">
             {mounted && date ? formatDate(date) : 'Loading...'}
           </div>
 
           {/* Logo Image Between Date and Contact */}
-          <div className="mb-2 md:mb-1 px-4 w-full flex flex-col items-center">
+          <div className="mb-1 md:mb-0.5 px-4 w-full flex flex-col items-center">
             <img 
               src="/logo.jpeg" 
               alt="KINA EVENTS Logo" 
-              className="h-12 sm:h-16 md:h-16 lg:h-20 w-auto max-w-full mx-auto"
+              className="h-10 sm:h-12 md:h-14 lg:h-16 xl:h-20 w-auto max-w-full mx-auto"
               style={{
                 maxWidth: '90vw',
                 objectFit: 'contain'
               }}
             />
-            <p className="text-white font-poiret text-lg sm:text-xl md:text-2xl lg:text-3xl mt-2 md:mt-1 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
+            <p className="text-white font-poiret text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mt-1 md:mt-0.5 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
               KINA EVENTS
             </p>
           </div>
@@ -112,19 +108,19 @@ export default function MaintenancePage() {
       </div>
 
       {/* Footer */}
-      <footer className="relative z-20 w-full pb-12 md:pb-4 pt-4 md:pt-2">
+      <footer className="relative z-20 w-full pb-4 md:pb-2 pt-2 md:pt-1 flex-shrink-0">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <div className="text-center mb-4 md:mb-2">
-            <h3 className="text-white font-poiret text-xl md:text-2xl font-normal">Contact us</h3>
+          <div className="text-center mb-2 md:mb-1">
+            <h3 className="text-white font-poiret text-lg sm:text-xl md:text-xl lg:text-2xl font-normal">Contact us</h3>
           </div>
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-4 text-white font-poiret">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-3 text-white font-poiret">
             <a 
               href="tel:+250788314703" 
-              className="flex items-center gap-3 text-lg md:text-xl hover:opacity-80 transition-opacity drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
+              className="flex items-center gap-2 text-base sm:text-lg md:text-lg lg:text-xl hover:opacity-80 transition-opacity drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
             >
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
-                className="h-6 w-6" 
+                className="h-5 w-5 sm:h-6 sm:w-6" 
                 fill="none" 
                 viewBox="0 0 24 24" 
                 stroke="#fff"
@@ -140,11 +136,11 @@ export default function MaintenancePage() {
             </a>
             <a 
               href="mailto:Kinaevents1@gmail.com" 
-              className="flex items-center gap-3 text-lg md:text-xl hover:opacity-80 transition-opacity drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
+              className="flex items-center gap-2 text-base sm:text-lg md:text-lg lg:text-xl hover:opacity-80 transition-opacity drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
             >
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
-                className="h-6 w-6" 
+                className="h-5 w-5 sm:h-6 sm:w-6" 
                 fill="none" 
                 viewBox="0 0 24 24" 
                 stroke="#fff"
