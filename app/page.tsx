@@ -24,6 +24,9 @@ export default function HomePage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-poiret font-bold mb-3 md:mb-4 text-[#1a4d80]">
               KINA EVENTS
             </h1>
+            <p className="text-sm md:text-base mb-3 md:mb-4 text-white font-poiret font-normal">
+              Our website is still under maintenance. Please check back soon!
+            </p>
             <p className="text-sm md:text-base mb-2 md:mb-3 text-white/90 leading-relaxed font-poiret">
               Welcome to Kina Events, your premier destination for unforgettable experiences. 
               We specialize in creating extraordinary moments that bring people together.
