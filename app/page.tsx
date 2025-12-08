@@ -2,51 +2,60 @@
 
 export default function HomePage() {
   return (
-    <div className="h-screen relative overflow-hidden bg-[#4A90E2]">
+    <div className="min-h-screen h-screen relative overflow-y-auto bg-[#4A90E2]">
       {/* Decorative Diamond Pattern Top */}
-      <div className="absolute top-0 left-0 right-0 h-6 flex gap-2 justify-center items-center z-10">
+      <div className="absolute top-0 left-0 right-0 h-4 md:h-6 flex gap-1 md:gap-2 justify-center items-center z-10">
         {Array.from({ length: 20 }).map((_, i) => (
-          <div key={i} className="w-2 h-2 bg-white rotate-45 opacity-60"></div>
+          <div key={i} className="w-1.5 h-1.5 md:w-2 md:h-2 bg-white rotate-45 opacity-60"></div>
         ))}
       </div>
 
       {/* Decorative Diamond Pattern Bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-6 flex gap-2 justify-center items-center z-10">
+      <div className="absolute bottom-0 left-0 right-0 h-4 md:h-6 flex gap-1 md:gap-2 justify-center items-center z-10">
         {Array.from({ length: 20 }).map((_, i) => (
-          <div key={i} className="w-2 h-2 bg-white rotate-45 opacity-60"></div>
+          <div key={i} className="w-1.5 h-1.5 md:w-2 md:h-2 bg-white rotate-45 opacity-60"></div>
         ))}
       </div>
 
-      <div className="container mx-auto px-4 md:px-8 py-4 md:py-6 h-full flex items-center">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 items-center w-full">
+      <div className="container mx-auto px-3 sm:px-4 md:px-8 py-3 sm:py-4 md:py-6 min-h-full flex items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 md:gap-6 items-center w-full">
+          {/* Right Side - Image */}
+          <div className="relative h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] z-20 flex items-center justify-center order-1 lg:order-2">
+            <img 
+              src="/web.jpg" 
+              alt="Kina Events" 
+              className="max-w-full max-h-full w-auto h-auto object-contain"
+            />
+          </div>
+
           {/* Left Side - Text Content */}
-          <div className="text-white z-20 animate-fade-in-up font-poiret">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-poiret font-bold mb-3 md:mb-4 text-[#1a4d80]">
+          <div className="text-white z-20 animate-fade-in-up font-poiret text-center md:text-left order-2 lg:order-1">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-poiret font-bold mb-2 sm:mb-3 md:mb-4 text-[#1a4d80]">
               KINA EVENTS
             </h1>
-            <p className="text-sm md:text-base mb-3 md:mb-4 text-white font-poiret font-normal">
+            <p className="text-xs sm:text-sm md:text-base mb-2 sm:mb-3 md:mb-4 text-white font-poiret font-normal">
               Our website is still under maintenance. Please check back soon!
             </p>
-            <p className="text-sm md:text-base mb-2 md:mb-3 text-white/90 leading-relaxed font-poiret">
+            <p className="text-xs sm:text-sm md:text-base mb-2 sm:mb-2 md:mb-3 text-white/90 leading-relaxed font-poiret">
               Welcome to Kina Events, your premier destination for unforgettable experiences. 
               We specialize in creating extraordinary moments that bring people together.
             </p>
-            <p className="text-sm md:text-base mb-4 md:mb-5 text-white/90 leading-relaxed font-poiret">
+            <p className="text-xs sm:text-sm md:text-base mb-3 sm:mb-4 md:mb-5 text-white/90 leading-relaxed font-poiret">
               From intimate gatherings to grand celebrations, we craft events that leave lasting impressions. 
               Let us help you create memories that will be cherished forever.
             </p>
             
             {/* Contact Info in Hero */}
-            <div className="mt-2 md:mt-3">
-              <h3 className="text-white font-poiret text-base sm:text-lg md:text-xl font-normal mb-3">Contact us</h3>
-              <div className="flex flex-row gap-3 text-white font-poiret">
+            <div className="mt-2 sm:mt-2 md:mt-3">
+              <h3 className="text-white font-poiret text-sm sm:text-base md:text-lg lg:text-xl font-normal mb-2 sm:mb-3">Contact us</h3>
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 text-white font-poiret items-center md:items-start">
                 <a 
                   href="tel:+250788314703" 
-                  className="flex items-center justify-center gap-2 bg-[#1a4d80] text-white px-4 py-3 rounded-full font-poiret font-normal hover:bg-[#153a66] transition-colors shadow-lg"
+                  className="flex items-center justify-center gap-1.5 sm:gap-2 bg-[#1a4d80] text-white px-3 sm:px-4 py-2 sm:py-3 rounded-full font-poiret font-normal hover:bg-[#153a66] transition-colors shadow-lg text-xs sm:text-sm md:text-base"
                 >
                   <svg 
                     xmlns="http://www.w3.org/2000/svg" 
-                    className="h-5 w-5 sm:h-6 sm:w-6" 
+                    className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 flex-shrink-0" 
                     fill="none" 
                     viewBox="0 0 24 24" 
                     stroke="currentColor"
@@ -58,15 +67,15 @@ export default function HomePage() {
                       d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" 
                     />
                   </svg>
-                  0788314703
+                  <span className="truncate">0788314703</span>
                 </a>
                 <a 
                   href="mailto:Kinaevents1@gmail.com" 
-                  className="flex items-center justify-center gap-2 bg-[#1a4d80] text-white px-4 py-3 rounded-full font-poiret font-normal hover:bg-[#153a66] transition-colors shadow-lg"
+                  className="flex items-center justify-center gap-1.5 sm:gap-2 bg-[#1a4d80] text-white px-3 sm:px-4 py-2 sm:py-3 rounded-full font-poiret font-normal hover:bg-[#153a66] transition-colors shadow-lg text-xs sm:text-sm md:text-base"
                 >
                   <svg 
                     xmlns="http://www.w3.org/2000/svg" 
-                    className="h-5 w-5 sm:h-6 sm:w-6" 
+                    className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 flex-shrink-0" 
                     fill="none" 
                     viewBox="0 0 24 24" 
                     stroke="currentColor"
@@ -78,19 +87,10 @@ export default function HomePage() {
                       d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" 
                     />
                   </svg>
-                  Kinaevents1@gmail.com
+                  <span className="truncate">Kinaevents1@gmail.com</span>
                 </a>
               </div>
             </div>
-          </div>
-
-          {/* Right Side - Image */}
-          <div className="relative h-[300px] md:h-[400px] lg:h-[500px] z-20 flex items-center justify-center">
-            <img 
-              src="/web.jpg" 
-              alt="Kina Events" 
-              className="max-w-full max-h-full w-auto h-auto object-contain"
-            />
           </div>
         </div>
       </div>
