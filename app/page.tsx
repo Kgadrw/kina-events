@@ -14,21 +14,20 @@ export default function HomePage() {
         </div>
 
         {/* Contact Info */}
-        <div className="mt-2 sm:mt-3 md:mt-4 z-20 text-center">
-          <h3 className="text-white font-poiret text-sm sm:text-base md:text-lg lg:text-xl font-normal mb-3 sm:mb-4">Contact us</h3>
+        <div className="mt-1 sm:mt-1.5 md:mt-2 z-20 text-center">
           <div className="flex flex-row gap-3 sm:gap-4 text-white font-poiret items-center justify-center">
             <a 
               href="tel:+250788314703" 
               className="text-xs sm:text-sm md:text-base hover:underline"
             >
-              0788314703
+              tel: 0788314703
             </a>
             <span className="text-white/60">|</span>
             <a 
               href="mailto:Kinaevents1@gmail.com" 
               className="text-xs sm:text-sm md:text-base hover:underline"
             >
-              Kinaevents1@gmail.com
+              email Kinaevents1@gmail.com
             </a>
           </div>
         </div>
